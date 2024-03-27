@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const getComboBoxes = async (query, database) => {
     await new Promise((resolve, reject) => {
-        fetch("http://localhost:9000/queryExecute", {
+        fetch("http://localhost:8000/queryExecute", {
             method: 'POST',
             headers: {
                 'Content-Type': "application/json"

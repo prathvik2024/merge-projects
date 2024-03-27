@@ -10,7 +10,7 @@ const queryRequestController = async (query, database, limit, offset, allCount) 
     console.log(query);
     var result = null;
     await new Promise((resolve, reject) => {
-        fetch("http://localhost:9000/queryExecute", {
+        fetch("http://localhost:8000/queryExecute", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query, database }),

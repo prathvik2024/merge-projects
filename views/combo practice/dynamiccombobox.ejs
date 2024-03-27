@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic ComboBox Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row bg-Success">
+            <div class="col border border-secondary p-3 m-2 rounded-3">
+                <form action="/combo" method="post">
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="inputState">Control Type</label>
+                            <select id="inputState" class="form-control" name="type">
+                                <% components.forEach((val)=>{ %>
+                                    <option value="<%=val%>">
+                                        <%=val%>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+                        <div class="form-group col">
+                            <label for="inputState">Fields</label>
+                            <select id="inputState" class="form-control" name="field">
+                                <% result.data.forEach((val)=>{ %>
+                                    <option value="<%=val.unique_name%>">
+                                        <%=val.unique_name%>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="form-group col">
+                            <label for="inputState">Bootstrap Classes</label>
+                            <input type="text" class="form-control" id="" placeholder="Enter bootstrap classes ...">
+                        </div>
+                        <div class="form-group col">
+                            <label for="inputState">Custom CSS Style</label>
+                            <input type="text" class="form-control" id="" placeholder="Enter custom css style ...">
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary mt-3" value="Submit">
+                </form>
+            </div>
+            <div class="col border border-secondary p-3 m-2 rounded-3">
+                <% if(typeof output !=='undefined' ) {%>
+                    <%-output%>
+                        <% } %>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

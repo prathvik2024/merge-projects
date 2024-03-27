@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .page-component {
+            margin: 10px 0;
+        }
+
+        .col-5 {
+            width: 100px;
+        }
+
+        .btn {
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: bold;
+            font-size: larger;
+        }
+
+        .btn-page {
+            color: black;
+            margin: auto;
+            font-size: xx-large;
+            border: 0;
+            font-weight: bold;
+        }
+
+        .btn-disable {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-component">
+        <div class="row">
+            <form action="/dynamictable" method="post">
+                <!-- <input type="hidden" name="getquery" value=""> -->
+                <% if(params.currPage !=1) {%>
+                    <div class="col-5">
+                        <input class="btn" type="submit" value="<<" name="button">
+                    </div>
+                    <div class="col-5">
+                        <input class="btn" type="submit" value="<" name="button">
+                    </div>
+                    <% } %>
+                        <div class="col-5">
+                            <p class="btn-page">
+                                <%=params.currPage%>
+                            </p>
+                            <input type="hidden" value="<%=params.currPage%>" name="page">
+                            <input type="hidden" value="<%=params.maxRecords%>" name="max_records">
+                            <input type="hidden" value="<%=params.offset%>" name="offset">             
+                        </div>
+                        <div class="col-5">
+                            <input
+                                class="btn <%=(typeof params.maxRecords !== 'undefined' && params.currPage == parseInt(params.maxRecords/params.pageLimit) ? ' btn-disable': '')%>"
+                                type="submit" value=">" name="button">
+                        </div>
+                        <div class="col-5">
+                            <input
+                                class="btn <%=(typeof params.maxRecords !== 'undefined' && params.currPage == parseInt(params.maxRecords/params.pageLimit) ? ' btn-disable': '')%>"
+                                type="submit" value=">>" name="button">
+                        </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

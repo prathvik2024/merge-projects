@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <link rel="stylesheet" href="./css/dynamictable.css">
+</head>
+<body>
+    <h1>Dynamic Table Generation</h1>
+    <%-include('delimitersearchcomponent') %>
+    <table border="1px solid black" id="table">
+        <%if(typeof result !=='undefined' && result.data.length != 0){ %>
+            <tbody>
+                <tr>
+                    <% result.colsName.forEach((col, i)=>{ %>
+                        <th>
+                            <%=col %>
+                        </th>
+                        <% }); %>
+                </tr>
+                <% result.data.forEach((row)=> { %>
+                    <tr>
+                        <% result.colsOrgName.forEach((col)=> { %>
+                            <td>
+                                <%=row[col]%>
+                            </td>
+                            <% }); %>
+                    </tr>
+                    <% }); %>
+            </tbody>
+    </table>
+    <tfoot>
+        <% if(params && !(params.max_records <=params.pageLimit)){ %>
+            <%- include('paginationcomponent') -%>
+                <% } %>
+    </tfoot>
+    <% }else{ %>
+        <img src="https://img.freepik.com/free-vector/hand-drawn-no-data-illustration_23-2150696455.jpg?t=st=1709612581~exp=1709616181~hmac=fc679ee4ec91a8efed3b8d0fc08b9891b72262d97792e6483e279e95f7d13346&w=740" alt="">
+        <h1>ooops records not found!</h1>
+        <% } %>
+</body>
+
+</html>

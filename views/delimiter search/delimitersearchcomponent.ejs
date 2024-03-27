@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,select {
+            padding: 5px;
+        }
+        .viewmore {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            font-weight: bold;
+        }
+        a{
+            display: flex;
+            justify-content: end;
+            font-size: large;
+        }
+        .d-none{
+            display: none !important;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <section>
+        <form action="/" method="post">
+            <div class="viewmore">
+                <input type="text" name="query" placeholder="Search delimiter query..." tabindex="1" value="<%=(typeof query !== 'undefined') ? query : '' %>">
+                <input class="btn" type="submit" value="Execute Query" tabindex="8">
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

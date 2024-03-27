@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <link rel="stylesheet" href="/css/dynamictable.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <h1>Dynamic Table Generation</h1>
+    <form action="/dynamictable" method="post">
+        <div class="form-field">
+            <label for="">Enter a database name</label>
+            <input type="text" name="inputdb" value="<%= (typeof database !=='undefined' ? database : '' ) %>">
+            <span>
+                <%= (typeof dbError !=='undefined' ? dbError : '' ) %>
+            </span>
+        </div>
+        <div class="form-field">
+            <label for="">Enter a query</label>
+            <input type="text" name="inputquery" value="<%= (typeof query !=='undefined' ? query : '' ) %>">
+            <span>
+                <%= (typeof Qerror !=='undefined' ? Qerror : '' ) %>
+            </span>
+        </div>
+        <input class="go-btn" type="submit" value="Run Query">
+    </form>
+
+    <table border="1px solid black" id="table">
+        <%if(typeof result !=='undefined' ){ %>
+            <tbody>
+                <tr>
+                    <% result.colsName.forEach((col, i)=>{ %>
+                        <th>
+                            <%=col %>
+                        </th>
+                        <% }); %>
+                </tr>
+                <% result.data.forEach((row)=> { %>
+                    <tr>
+                        <% result.colsOrgName.forEach((col)=> { %>
+                            <td>
+                                <%=row[col]%>
+                            </td>
+                            <% }); %>
+                    </tr>
+                    <% }); %>
+            </tbody>
+            <tfoot>
+                <% if(!(params.max_records <=params.pageLimit)){ %>
+                    <%- include('paginationcomponent') -%>
+                        <% } %>
+            </tfoot>
+    </table>
+
+    <% } %>
+</body>
+
+</html>

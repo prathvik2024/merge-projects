@@ -26,7 +26,7 @@ const queryExecuter = async (con, query) => {
     } catch (error) {
         response =  {status: false, error };
     }
-    console.log(await response);
+    // console.log(await response);
     return await response;
 }
 // const queryExecuter = async (con, query) =>{

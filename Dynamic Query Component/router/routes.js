@@ -17,7 +17,7 @@ router.post('/queryExecute', async (req, res) => {
     }else{
         var sql = req.body.query.trim();
         if(sql.startsWith('select') || sql.startsWith('insert') || sql.startsWith('update') || sql.startsWith('delete')){
-            console.log(sql);
+            // console.log(sql);
             res.status(200).json({result: await queryExecuterController(con, sql)});
         }
     }

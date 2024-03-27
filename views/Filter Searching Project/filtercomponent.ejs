@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,select {
+            padding: 5px;
+        }
+        .viewmore {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            font-weight: bold;
+        }
+        a{
+            display: flex;
+            justify-content: end;
+            font-size: large;
+        }
+        .d-none{
+            display: none !important;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <section>
+        <form action="/filter" method="post">
+            <div class="viewmore">
+                <input type="text" name="id" placeholder="Search any student id...." tabindex="1">
+                <input class="filter-box d-none" type="text" name="city" id="" placeholder="Search any city name..." tabindex="2">
+                <input class="filter-box d-none" type="text" name="state" id="" placeholder="Search any state name..." tabindex="3">
+                <input class="filter-box d-none" type="text" name="age" id="" placeholder="Search any age..." tabindex="4">
+                <input class="filter-box d-none" type="text" name="gender" id="" placeholder="Search any gender..." tabindex="5">
+                <input class="filter-box d-none" type="text" name="status" id="" placeholder="Search any status..." tabindex="6">
+                <select class="filter-box d-none" name="type" id="" tabindex="7">
+                    <option value="or" selected>OR</option>
+                    <option value="and">AND</option>
+                </select>
+                <input class="btn" name="filter" type="submit"  value="Go with filters " tabindex="8">
+            </div>
+        </form>
+        <a onclick="viewMoreFilters()" id="viewmore" tabindex="9">view more filters</a>
+    </section>
+    <script>
+        function viewMoreFilters() {
+           document.querySelectorAll(".filter-box").forEach((box)=>{
+            box.classList.toggle("d-none")
+           })
+           
+        }
+    </script>
+</body>
+
+</html>

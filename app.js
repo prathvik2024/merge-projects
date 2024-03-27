@@ -7,6 +7,7 @@ const dynamic_table = require('./Dynamic Table Component/router/routes');
 const delimiter_search = require('./delimiter search/router/routes');
 const combo_practice = require('./combo practice/router/routes');
 const queryExecuter = require('./Dynamic Query Component/router/routes');
+const filterSearching = require('./Filter Searching Project/router/routes');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -26,6 +27,7 @@ app.use('/', delimiter_search);
 app.use('/', dynamic_table);
 app.use('/', combo_practice);
 app.use('/', queryExecuter);
+app.use('/', filterSearching);
 
 app.listen(process.env.PORT, () =>{
     console.log(`server listning at http://localhost:${process.env.PORT}`);

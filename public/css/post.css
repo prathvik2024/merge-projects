@@ -1,0 +1,47 @@
+table {
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+a {
+    text-decoration: none;
+}
+
+tr,
+td {
+    padding: 10px
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type=button],
+p {
+    margin: 10px;
+    font-size: x-large;
+}
+
+.searchBox {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search {
+    padding: 10px;
+    font-size: large;
+}
+
+.not-found {
+    display: none;
+    justify-content: center;
+}
+
+.not-found-text {
+    font-size: xx-large;
+    font-weight: bold;
+}

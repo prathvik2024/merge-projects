@@ -20,8 +20,6 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/public'));
 
 app.use(cors());
-// console.log(todo);
-// app.use('/', router);
 app.use('/', todo);
 app.use('/', delimiter_search);
 app.use('/', dynamic_table);

@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/post.css">
+</head>
+
+<body>
+    <div class="searchBox">
+        <input class="search" type="text" name="" id="search" placeholder="search anything..."
+            oninput="searchRecords()">
+    </div>
+    <table border="1px solid black" id="table">
+    </table>
+    <div class="not-found" id="not-found">
+        <div>
+            <img width="500px" height="500px"
+                src="https://img.freepik.com/free-vector/hand-drawn-no-data-illustration_23-2150696455.jpg?t=st=1710217109~exp=1710220709~hmac=326289bbb7f48fe36c46a578e9ca0ed6c94677ff12948081d73c4c2270574f6b&w=740"
+                alt="">
+            <p class="not-found-text">Search Records not found...</p>
+        </div>
+    </div>
+    <div class="pagination" id="pagination">
+        <input type="hidden" id="params" value="">
+        <input type="button" value="<<" onclick="getPagination(this)" id="first">
+        <input type="button" value="<" onclick="getPagination(this)" id="prev">
+        <p id="currPage">1</p>
+        <input type="button" value=">" onclick="getPagination(this)" id="next">
+        <input type="button" value=">>" onclick="getPagination(this)" id="last">
+    </div>
+    <script src="../js/post.js" type="text/javascript"></script>
+</body>
+
+</html>

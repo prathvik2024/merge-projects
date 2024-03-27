@@ -1,0 +1,30 @@
+table{
+    border-collapse: collapse;
+}
+tr, td, th{
+    padding:10px
+}
+a{
+    text-decoration: none;
+}
+input[type=button]{
+    padding: 10px;
+    background-color: green;
+    border: 0;
+    margin-top: 10px;
+    color: white;
+    font-size: 16px;
+}
+.comments{
+    background-color:lightblue;
+    border-radius: 10px;
+    border: 0;
+    padding: 5px;
+    margin-top: 15px;
+    width: 60%;
+    height: max-content;
+    display: none;
+}
+.comment-text{
+    color: black;
+}

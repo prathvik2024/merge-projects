@@ -1,9 +1,7 @@
 const app = require('express');
-const path = require('path');
-const dotenv = require('dotenv').config({ path: path.join(__dirname, '../.env')});
+
 const router = app.Router();
 const todoControllers = require('../controllers/todoControllers');
-console.log("todo routes");
 router.post("/getNotes", async (req, res)=>{
     res.status(200).json(await todoControllers.getNotesController());    
 })

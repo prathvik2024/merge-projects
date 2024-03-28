@@ -1,7 +1,7 @@
 const app = require('express');
 const router = app.Router();
 const path = require('path');
-const dotenv = require('dotenv').config({ path: path.join(__dirname, '../.env')});
+const dotenv = require('dotenv').config();
 const { getRecords, getPagination } = require('../controller/dynamicTableController');
 
 

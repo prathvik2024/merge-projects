@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        td,
+        tr,
+        th {
+            padding: 10px;
+        }
+
+        .viewmore-btn {
+            padding: 10px;
+            background-color: cadetblue;
+            color: white;
+            font-size: larger;
+            border: 0px;
+            border-radius: 8px;
+            margin: 0 10px;
+        }
+
+        .edit-btn {
+            padding: 10px;
+            background-color: green;
+            color: white;
+            font-size: larger;
+            border: 0px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .delete-btn {
+            padding: 10px;
+            background-color: red;
+            color: white;
+            font-size: larger;
+            margin: 0 10px;
+            border: 0px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .btn-group {
+            display: flex;
+        }
+
+        .page-component {
+            margin: 10px 0;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        .col-5 {
+            width: 80px;
+            padding: 10px;
+        }
+        .btn {
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: bold;
+            font-size: larger;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Show All Students</h1>
+    <table border="1px solid black">
+        <tr>
+            <th>First Name
+                <div>
+                    <a class="bi bi-arrow-bar-up" href="?page=<%=currPage%>&col=fname&orderby=aesc"></a>
+                    <a class="bi bi-arrow-bar-down" href="?page=<%=currPage%>&col=fname&orderby=desc"></a>
+                </div>
+            </th>
+            <th>Last Name<div>
+                <a class="bi bi-arrow-bar-up" href="?page=<%=currPage%>&col=lname&orderby=aesc"></a>
+                <a class="bi bi-arrow-bar-down" href="?page=<%=currPage%>&col=lname&orderby=desc"></a>
+            </div></th>
+            <th>Age<div>
+                <a class="bi bi-arrow-bar-up" href="?page=<%=currPage%>&col=age&orderby=aesc"></a>
+                <a class="bi bi-arrow-bar-down" href="?page=<%=currPage%>&col=age&orderby=desc"></a>
+            </div></th>
+            <th>Phone Number<div>
+                <a class="bi bi-arrow-bar-up" href="?page=<%=currPage%>&col=phone&orderby=aesc"></a>
+                <a class="bi bi-arrow-bar-down" href="?page=<%=currPage%>&col=phone&orderby=desc"></a>
+            </div></th>
+            <th>Email Address<div>
+                <a class="bi bi-arrow-bar-up" href="?page=<%=currPage%>&col=email&orderby=aesc"></a>
+                <a class="bi bi-arrow-bar-down" href="?page=<%=currPage%>&col=email&orderby=desc"></a>
+            </div></th>
+            <th>Gender</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Status</th>
+        </tr>
+        <% result.result.forEach(function(student) { %>
+            <tr>
+                <td>
+                    <%= student.fname %>
+                </td>
+                <td>
+                    <%= student.lname %>
+                </td>
+                <td>
+                    <%= student.age %>
+                </td>
+                <td>
+                    <%= student.phone %>
+                </td>
+                <td>
+                    <%= student.email %>
+                </td>
+                <td>
+                    <%= student.gender %>
+                </td>
+                <td>
+                    <%= student.city %>
+                </td>
+                <td>
+                    <%= student.state %>
+                </td>
+                <td>
+                    <%= student.status %>
+                </td>
+                <!-- <td>
+                    <div class="btn-group">
+                        <form action="/studentdetails" method="post">
+                            <input type="hidden" name="id" value="<%= student.id %>">
+                            <input class="viewmore-btn" type="submit" value="viewmore" name="viewmore">
+                        </form>
+                        <a class="edit-btn" href="/editstudent/<%= student.id %>">Edit</a>
+                        <a class="delete-btn" href="/deletestudent/<%= student.id %>">Delete</a>
+                    </div>
+
+                </td> -->
+            </tr>
+            <% }); %>
+    </table>
+    <%- include('paginationcomponent') -%>
+
+</body>
+
+</html>

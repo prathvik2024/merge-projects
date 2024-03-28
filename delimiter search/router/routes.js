@@ -2,7 +2,7 @@ const app = require('express');
 const router = app.Router();
 const path = require('path');
 const { queryRequestController, getPagination, stringToQuery } = require('../controller/delimiterSearchController');
-const dotenv = require('dotenv').config({ path: path.join(__dirname, '../.env')});
+const dotenv = require('dotenv').config();
 var data = "<p style='color: red'> hello dude!</p>";
 var maxRecords, currPage, offset, button, where, params;
 

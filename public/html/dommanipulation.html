@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            width: 50px;
+            height: 50px;
+        }
+
+        input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Dom Manipulation</h1>
+    <div style="display: flex; justify-content: center;">
+
+
+        <table id="table" border="1px solid black">
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <input type="submit" value="Add Row" id="addrow" style="margin-top: 20px" onclick="addrow()">
+        <input type="submit" value="Add Col" id="addcol" style="margin-top: 20px" onclick="addcol()">
+        <input type="submit" value="Delete Row" id="dltrow" style="margin-top: 20px" onclick="dltrow()">
+        <input type="submit" value="Delete Col" id="dltcol" style="margin-top: 20px" onclick="dltcol()">
+    </div>
+    <script>
+        function addrow(){
+            let table = document.getElementById('table');
+            let cols = table.rows[0].cells.length;
+            let row = document.createElement("tr");
+            for(let col = 0; col < cols; col++){
+                let td = document.createElement("td");
+                row.appendChild(td);
+            }
+            table.appendChild(row);
+        }
+        function dltrow(){
+            let table = document.getElementById('table');
+            table.deleteRow(0);
+        }
+        function addcol(){
+            let table = document.getElementById('table');
+            var rows = table.rows;
+            console.log(table.columns);
+
+            for(let i = 0; i <= rows.length; i++){
+                let td = document.createElement("td");
+                rows[i].appendChild(td);
+            }
+        }
+        function dltcol(){
+            let table = document.getElementById('table');
+            var rows = table.rows;
+            for (row = 0; row < rows.length; row++){    
+                rows[row].deleteCell(1);
+            }
+        }
+    </script>
+</body>
+
+</html>

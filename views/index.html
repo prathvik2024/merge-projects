@@ -8,11 +8,13 @@
 <body>
     <a href="../todo/FRONTEND/index.html">todo</a><br>
     <a id="dynamic_table">dynamic table</a><br>
-    <a id="delimiter_search">Delimiter search</a>
-    <a id="combo_practice">Combo Practice</a>
-    <a id="filter_search">Filter Searching</a>
-    <a href="../public/html/post.html">JSON Placeholder</a>
-    <a href="../timezone Calc/timezone.html">Timezone Calc</a>
+    <a id="delimiter_search">Delimiter search</a><br>
+    <a id="combo_practice">Combo Practice</a><br>
+    <a id="filter_search">Filter Searching</a><br>
+    <a href="../public/html/post.html">JSON Placeholder</a><br>
+    <a href="../timezone Calc/timezone.html">Timezone Calc</a><br>
+    <a href="../public/html/dommanipulation.html">DOM Manipulation</a><br>
+    <a id="student_management">Student Management</a><br>
     <script>
         document.getElementById('dynamic_table').addEventListener('click', ()=>{
             window.location.href = "http://localhost:8000/table";
@@ -25,6 +27,9 @@
         })
         document.getElementById('delimiter_search').addEventListener('click', ()=>{
             window.location.href = "http://localhost:8000/";
+        })
+        document.getElementById('student_management').addEventListener('click', ()=>{
+            window.location.href = "http://localhost:8000/showstudents";
         })
     </script>
 </body>

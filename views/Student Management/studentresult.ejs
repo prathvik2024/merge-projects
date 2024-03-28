@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        td,
+        tr,
+        th {
+            padding: 10px;
+        }
+
+        .viewmore-btn {
+            padding: 10px;
+            background-color: cadetblue;
+            color: white;
+            font-size: larger;
+            border: 0px;
+            border-radius: 8px;
+            margin: 0 10px;
+        }
+
+        .edit-btn {
+            padding: 10px;
+            background-color: green;
+            color: white;
+            font-size: larger;
+            border: 0px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .delete-btn {
+            padding: 10px;
+            background-color: red;
+            color: white;
+            font-size: larger;
+            margin: 0 10px;
+            border: 0px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .btn-group {
+            display: flex;
+        }
+
+        .page-component {
+            margin: 10px 0;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        .col-5 {
+            width: 80px;
+            padding: 10px;
+        }
+
+        .btn {
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: bold;
+            font-size: larger;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        select {
+            padding: 7px;
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Show All Students</h1>
+    <table border="1px solid black">
+        <tr>
+            <th rowspan="2">First Name</th>
+            <th rowspan="2">Last Name</th>
+            <th colspan="2">Terminal</th>
+            <th colspan="2">Prelim</th>
+            <th colspan="2">Final</th>
+            <th rowspan="2">Total Marks</th>
+            <th rowspan="2">Obtain Marks</th>
+            <th rowspan="2">View More</th>
+        </tr>
+        <tr>
+            <th>Theory</th>
+            <th>Practical</th>
+            <th>Theory</th>
+            <th>Practical</th>
+            <th>Theory</th>
+            <th>Practical</th>
+        </tr>
+
+        <% for(var i=0; i < result.studentData.length; i++){ %>
+            <tr>
+                <td>
+                    <%=result.studentData[i].fname %>
+                </td>
+                <td>
+                    <%=result.studentData[i].lname %>
+                </td>
+                <td>
+                    <%=result.terminalTheory[i].total_obtain %>
+                </td>
+                <td>
+                    <%=result.terminalPractical[i].total_obtain %>
+                </td>
+                <td>
+                    <%=result.prelimTheory[i].total_obtain %>
+                </td>
+                <td>
+                    <%=result.prelimPractical[i].total_obtain %>
+                </td>
+                <td>
+                    <%=result.finalTheory[i].total_obtain %>
+                </td>
+                <td>
+                    <%=result.finalpractical[i].total_obtain %>
+                </td>
+                <td>1200</td>
+                <td>
+                    <%=result.studentData[i].total_obtain_marks %>
+                </td>
+                <td>
+                    <a href="/studentdetails?id=<%=result.studentData[i].id%>&totalmarks=<%=result.studentData[i].total_obtain_marks %>">View More</a>
+                </td>
+            </tr>
+            <% } %>
+
+    </table>
+    <%- include('paginationcomponent') -%>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/pagecomponent.css">
+</head>
+
+<body>
+    <div class="page-component">
+        <div class="row">
+            <% if(currPage != 1){ %>
+            <div class="col-5">
+                <a class="btn" href="?page=<%= 1 %>"> << </a>
+            </div>
+            <div class="col-5">
+                <a class="btn" href="?page=<%= parseInt(currPage) - 1 %>"><</a>
+            </div>
+        <% } %>
+        
+            <div class="col-5">
+                <a class="btn" href=""><%= currPage %></a>
+            </div>
+            <% if(currPage == parseInt(process.env.MAX_RECORDS / process.env.PAGE_LIMIT)){ %>
+            <div class="col-5">
+                <a class="btn" href="?page=<%= parseInt(currPage) + 1 %>"></a>
+            </div>
+            <div class="col-5">
+                <a class="btn" href="?page=<%= parseInt(process.env.MAX_RECORDS/process.env.PAGE_LIMIT) %>"></a>
+            </div>
+            <% }else{ %>
+                <div class="col-5">
+                    <a class="btn" href="?page=<%= parseInt(currPage) + 1 %>">></a>
+                </div>
+                <div class="col-5">
+                    <a class="btn" href="?page=<%= parseInt(process.env.MAX_RECORDS/process.env.PAGE_LIMIT) %>">>></a>
+                </div>
+                <% } %>
+        </div>
+    </div>
+</body>
+
+</html>

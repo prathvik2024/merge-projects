@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <h1 class="center">Job Application Form</h1>
+    <form action="">
+        <fieldset>
+            <legend title="Basic information">Basic information</legend>
+            <table>
+                <tr>
+                    <td>
+                        First Name: <input type="text">
+                    </td>
+                    <td>
+                        Last Name: <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Designation: <input type="text" name="designation" id="designation">
+                    </td>
+                    <td>
+                        Address 1: <input type="text" name="address1" id="address1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email: <input type="text" name="email" id="email">
+                    </td>
+                    <td>
+                        Address 2: <input type="text" name="address2" id="address2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phone Number: <input type="text" name="phone" id="phone">
+                    </td>
+
+                    <td>
+                        City: <input type="text" name="city" id="city">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender: <input type="radio" name="gender" value="Male" style="width: 20px; padding:0px;">Male
+                        <input type="radio" name="gender" value="Female" style="width: 20px; padding:0px;">Female
+                    </td>
+
+                    <td>
+                        State: <select name="state" id="state" style="width: 615px;">
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Rajsthan">Rajsthan</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Madhyaprades">Madhyaprades</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Zip code: <input type="number" name="zipcode" id="zipco">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        Relationship Status: <select name="relationship" id="relationship" style="width: 620px;">
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorsed">Divorsed</option>
+                        </select>
+                    </td>
+                    <td>
+                        Date: <input type="date" name="date" id="" style="width: 600px;">
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+
+        <div style="margin-top: 30px;">
+            <fieldset>
+                <legend>Educational Details</legend>
+                <!-- SSC Result -->
+                <div style="margin-top: 20px;">
+                    <table style="margin-top: 10px;">
+                        <b style="font-size: large;">SSC Result</b>
+                        <tr>
+                            <td>
+                                Board Name: <input type="text" name="sscboard" id="board">
+                            </td>
+                            <td>
+                                Passing Year: <input type="text" name="sscboard" id="board">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Percentages: <input type="text" name="sscpr" id="pr">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- HSC Result -->
+                <div style="margin-top: 20px;">
+                    <table style="margin-top: 10px;">
+                        <b style="font-size: large;">HSC Result</b>
+                        <tr>
+                            <td>
+                                Board Name: <input type="text" name="hscboard" id="board">
+                            </td>
+                            <td>
+                                Passing Year: <input type="text" name="hscboard" id="board">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Percentages: <input type="text" name="hscpr" id="pr">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Bachelor Result -->
+                <div style="margin-top: 20px;">
+                    <table style="margin-top: 10px;">
+                        <b style="font-size: large;">Bachelor Result</b>
+                        <tr>
+                            <td>
+                                Course Name: <input type="text" name="bCourse" id="board">
+                            </td>
+                            <td>
+                                University name: <input type="text" name="bUniversityName" id="">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                Passing Year: <input type="text" name="bPassingYear" id="board">
+                            </td>
+                            <td>
+                                Percentages: <input type="text" name="bPr" id="pr">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Master Result -->
+                <div style="margin-top: 20px;">
+                    <table style="margin-top: 10px;">
+                        <b style="font-size: large;">Master Result</b>
+                        <tr>
+                            <td>
+                                Course Name: <input type="text" name="mCourse" id="board">
+                            </td>
+                            <td>
+                                University name: <input type="text" name="mUniversityName" id="">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                Passing Year: <input type="text" name="mPassingYear" id="board">
+                            </td>
+                            <td>
+                                Percentages: <input type="text" name="mPr" id="pr">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <fieldset>
+                <legend>Work Experience</legend>
+                <table style="margin-top: 10px;">
+                    <tr>
+                        <td>
+                            1st Company Name: <input type="text" name="companyName" id="companyName"
+                                style="width: 400px;">
+                        </td>
+                        <td>
+                            Designation: <input type="text" name="designation" id="designation" style="width: 350px;">
+                        </td>
+                        <td>
+                            From: <input type="text" name="fromDate" id="fromDate" style="width: 205px;">
+                        </td>
+                        <td>
+                            To: <input type="text" name="toDate" id="toDate" style="width: 205px;">
+                        </td>
+                    </tr>
+                </table>
+                <table style="margin-top: 10px;">
+                    <tr>
+                        <td>
+                            2nd Company Name: <input type="text" name="companyName" id="companyName"
+                                style="width: 400px;">
+                        </td>
+                        <td>
+                            Designation: <input type="text" name="designation" id="designation" style="width: 350px;">
+                        </td>
+                        <td>
+                            From: <input type="text" name="fromDate" id="fromDate" style="width: 205px;">
+                        </td>
+                        <td>
+                            To: <input type="text" name="toDate" id="toDate" style="width: 205px;">
+                        </td>
+                    </tr>
+                </table>
+                <table style="margin-top: 10px;">
+                    <tr>
+                        <td>
+                            3rd Company Name: <input type="text" name="companyName" id="companyName"
+                                style="width: 400px;">
+                        </td>
+                        <td>
+                            Designation: <input type="text" name="designation" id="designation" style="width: 350px;">
+                        </td>
+                        <td>
+                            From: <input type="text" name="fromDate" id="fromDate" style="width: 205px;">
+                        </td>
+                        <td>
+                            To: <input type="text" name="toDate" id="toDate" style="width: 205px;">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+
+
+        <div style="margin-top: 30px;">
+            <table style="width: 1285px;">
+                <tr>
+                    <td>
+                        <!-- Language known -->
+                        <fieldset style="padding: 20px;">
+                            <legend>Language known</legend>
+                            <table style="margin-top: 10px;">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="lang_hindi" id="lang_hindi"
+                                            style="padding:0px; width: 30px;">Hindi
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="lang_hindi_read" id="lang_hindi_read"
+                                            style="width: 30px;">Read
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="lang_hindi_write" id="lang_hindi_write"
+                                            style="width: 30px;">Write
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="lang_hindi_speak" id="lang_hindi_speak"
+                                            style="width: 30px;">Speak
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="lang_guj" id="lang_guj"
+                                            style="padding:0px; width: 30px;">Gujarati
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="lang_guj_read" id="lang_guj_read"
+                                            style="width: 30px;">Read
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="lang_guj_write" id="lang_guj_write"
+                                            style="width: 30px;">Write
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="lang_guj_speak" id="lang_guj_speak"
+                                            style="width: 30px;">Speak
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="lang_eng" id="lang_eng"
+                                            style="padding:0px; width: 30px;">English
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="lang_eng_read" id="lang_eng_read"
+                                            style="width: 30px;">Read
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="lang_eng_write" id="lang_eng_write"
+                                            style="width: 30px;">Write
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="lang_eng_speak" id="lang_eng_speak"
+                                            style="width: 30px;">Speak
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </td>
+
+                    <td>
+                        <!-- Technology known -->
+                        <fieldset>
+                            <legend>Technologies you know</legend>
+                            <table style="margin-top: 10px;">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="tech_php" id="tech_php"
+                                            style="padding:0px; width: 30px;">PHP
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_php_status" id="tech_php_beginer"
+                                            style="width: 30px;">Beginer
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_php_status" id="tech_php_mediator"
+                                            style="width: 30px;">Mediator
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_php_status" id="tech_php_expert"
+                                            style="width: 30px;">Expert
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="tech_laravel" id="tech_laravel"
+                                            style="padding:0px; width: 30px;">Laravel
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_laravel_status" id="tech_laravel_beginer"
+                                            style="width: 30px;">Beginer
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_laravel_status" id="tech_laravel_mediator"
+                                            style="width: 30px;">Mediator
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_laravel_status" id="tech_laravel_expert"
+                                            style="width: 30px;">Expert
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="tech_mysql" id="tech_mysql"
+                                            style="padding:0px; width: 30px;">Mysql
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_mysql_status" id="tech_mysql_beginer"
+                                            style="width: 30px;">Beginer
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_mysql_status" id="tech_mysql_mediator"
+                                            style="width: 30px;">Mediator
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_mysql_status" id="tech_mysql_expert"
+                                            style="width: 30px;">Expert
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="tech_oracle" id="tech_oracle"
+                                            style="padding:0px; width: 30px;">Oracle
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_oracle_status" id="tech_oracle_beginer"
+                                            style="width: 30px;">Beginer
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_oracle_status" id="tech_oracle_mediator"
+                                            style="width: 30px;">Mediator
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="tech_oracle_status" id="tech_oracle_expert"
+                                            style="width: 30px;">Expert
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="margin-top: 30px; width: 1285px;">
+            <fieldset>
+                <legend>Reference Contact</legend>
+                <table>
+                    <tr>
+                        <td>
+                            1st Ref Name: <input type="text" name="ref_name" id="ref_name" style=" width: 420px;">
+                        </td>
+                        <td>
+                            Contact Number: <input type="text" name="ref_contact" id="ref_contact"
+                                style="width: 300px;">
+                        </td>
+                        <td>
+                            Relation: <input type="text" name="ref_relation" id="ref_relation" style="width: 250px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            2nd Ref Name: <input type="text" name="ref_name" id="ref_name" style=" width: 420px;">
+                        </td>
+                        <td>
+                            Contact Number: <input type="text" name="ref_contact" id="ref_contact"
+                                style="width: 300px;">
+                        </td>
+                        <td>
+                            Relation: <input type="text" name="ref_relation" id="ref_relation" style="width: 250px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            3rd Ref Name: <input type="text" name="ref_name" id="ref_name" style=" width: 420px;">
+                        </td>
+                        <td>
+                            Contact Number: <input type="text" name="ref_contact" id="ref_contact"
+                                style="width: 300px;">
+                        </td>
+                        <td>
+                            Relation: <input type="text" name="ref_relation" id="ref_relation" style="width: 250px;">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+
+        <div style="margin-top: 30px; width: 900px;">
+            <fieldset>
+                <legend>Preference</legend>
+                <table>
+                    <tr>
+                        <td>
+                            Notice period: <input type="text" name="notice_period" id="notice_period" style="width: 400px">
+                        </td>
+                        <td>
+                            Current CTC: <input type="text" name="current_ctc" id="current_ctc" style="width: 380px">
+                        </td>
+                        <td>
+                            Expected CTC: <input type="text" name="expected_ctc" id="expected_ctc" style="width: 380px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Prefered location: <select name="pref_location" id="pref_location" style="width: 400px;">
+                                <option value="Ahmedabad">Ahmedabad</option>
+                                <option value="Rajkot">Rajkot</option>
+                                <option value="Surendranagar">Surendranagar</option>
+                                <option value="Surat">Surat</option>
+                            </select>
+                        </td>
+
+                        <td colspan="2">
+                            Department: <select name="pref_department" id="pref_department" style="width: 400px;">
+                                <option value="Marketing">Marketing</option>
+                                <option value="Developer">Developer</option>
+                                <option value="Testing">Testing</option>
+                                <option value="HR">HR</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+        </div>
+    </form>
+
+    <div style="display: flex; justify-content: center; align-items: center; width:100vw">
+        <input type="submit" value="submit" style="width:1200px;background-color:green;color: white; margin-top: 20px; font-size: 25px">
+    </div>
+</body>
+
+</html>

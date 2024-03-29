@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understand HTML Tags</title>
+    <style>
+        p{
+            font-size: larger;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;" id="h1">Understand HTML Tags</h1>
+    <hr style="width:18%">
+    <!-- Basic Tags -->
+    <h2 style="color: blue">Basic Tags</h2>
+
+    <p>1. h tag: define header size</p>
+    <h1>this is h1 tag</h1>
+    <h2 style="text-align: start;">this is h2 tag</h2>
+    <h3>this is h3 tag</h3>
+    <h4>this is h4 tag</h4>
+    <h5>this is h5 tag</h5>
+    <h6>this is h6 tag</h6>
+
+    <p>2. p tag: display paragraph</p>
+    <p>this is p tag</p>
+
+    <p>3. br tag: break line </p>
+    <br>
+    <p>this is break line tag</p>
+
+    <p>4. hr tag: display line on page</p>
+    <hr>
+
+    <!-- Formatting Tags -->
+    <h2 style="color: blue">Formatting Tags</h2>
+
+    <p>1. abbr tag: abbreviation of short form</p>
+    <abbr title="Hyper Text Markup Language">HTML</abbr>
+
+    <p>2. address: contact information </p>
+    <address>
+        Written By: Prathvik Sankaliya <br>
+        Software Developer @eSparkBiz <br>
+        Ashapura Water, Matam chok, <br>
+        Market road, limbdi - 363421, <br>
+        India
+    </address>
+
+    <p>3. b tag: bold text</p>
+    <b>Prathvik Sankaliya</b>
+
+    <p>4. bdo: bi-directional text</p>
+    <bdo dir="rtl">Prathvik Sankaliya</bdo>
+    <bdo dir="ltl">Prathvik Sankaliya</bdo>
+
+    <p>5. blockquote: A section that is quoted from another source </p>
+    <blockquote cite="https://www.goodreads.com/quotes">Be the change that you wish to see in the world. ~ Mahatma Gandhi</blockquote>
+
+    <p>6. cite: Define title of work</p>
+    <img src="./monalisa.jpeg" alt=""><p>Picture of <cite>Monalisa</cite></p>
+
+    <p>7. code: some text about coding text in document</p>
+    <p>css color property is <code>color: white</code>.</p>
+
+    <p>8. del/ins: strick on text like delete this text</p>
+    <p>price of leptop is : <del>50000</del> <ins>45000</ins></p>
+
+    <p>9. dfn: define terms</p>
+    <p><dfn>HTML</dfn> is the standard markup language for creating web pages.</p>
+
+    <p>10.em/i: emphasized text same like italic</p>
+    <em>Prathvik Sankaliya</em>
+
+    <p>11.kbd: keyboard input </p>
+    <p>press <kbd>Ctrl</kbd> + <kbd>c</kbd> to copy a text.</p>
+
+    <p>12.mark: highlight the text</p>
+    <p>my name is <mark>Prathvik Sankaliya</mark></p>
+
+    <p>13. meter: show the usage in bar line</p>
+    <p>C drive is: <meter value="3" min="0" max="10">3 out of 10</meter></p>
+
+    <p>14. pre: prefomatted text </p>
+    <pre>hello my name is 
+        prathvik Sankaliya</pre>
+
+    <p>15. q: quotation</p>
+    <q>Be the change that you wish to see in the world.</q>
+
+    <p>16. small: make small text</p>
+    <small>Parthvik Sankaliya</small>
+
+    <p>17. strong: bold the text</p>
+    <strong>Prathvik Sankaliya</strong>
+
+    <p>18. sub: subscript of text</p>
+    H<sub>2</sub>O
+
+    <p>19. sup: superscript of text</p>
+    2<sup>3</sup> = 8
+
+    <p>20. u: underline</p>
+    <u>Prathvik</u>
+
+    <hr>
+    <!-- Frame Tags -->
+    <h2 style="color: blue">Frame Tags</h2>
+    <p>1. iframe: define inline frame</p>
+    <iframe src="https://www.w3schools.com" width="100%" height="300px" frameborder="0" title="w3"></iframe>
+
+    <hr>
+    <!-- Audio / Video Tags -->
+    <h2 style="color: blue">Audio/Video Tags</h2>
+
+    <p>1. Audio tag: play audio with contorls</p>
+    <audio controls src="./audio.mp3" id="audio"></audio>
+
+    <p>2. Video tag: play video with contorls</p>
+    <video controls src="./video.mp4" width="50%" height="500px"></video>
+
+    <hr>
+    <!-- Links Tags -->
+    <h2 style="color: blue">Links Tags</h2>
+
+    <p>1. a: anchor tag use for hyperlink</p>
+    <a href="https://github.com/prathviksankaliya" target="_blank">Github</a>
+
+    <p>2. link: you can add a link to use in entire document</p>
+    <link rel="stylesheet" href="./style.css">CSS
+
+    <p>3. nav: Navigational Links</p>
+    <nav>
+        <a href="#h1">go to H1 Tag</a><br><br>
+        <a href="#audio">go to audio Tag</a>
+    </nav>
+
+    <hr>
+    <!-- List Tags -->
+    <h2 style="color: blue">List Tags</h2>
+
+    <p>1. menu: list a menu </p>
+    <menu><li>tea</li><li>coffee</li><li>milk</li></menu>
+
+    <p>2. ul: unorderedlist</p>
+    <ul style="list-style-type:lower-greek;">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Java Script</li>
+    </ul>
+
+    <p>3. ol: orderedlist</p>
+    <ol start="5">
+        <li>Android</li>
+        <li>Flutter</li>
+        <li>React Native</li>
+    </ol>
+
+    <p>4. dl: description list</p>
+    <dl>
+        <dt>Coffee</dt>
+        <dd>Black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>White cold drink</dd>
+      </dl>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+</head>
+
+<body>
+    <h1 class="center">Job Application Form</h1>
+    <form action="" method="get">
+        <fieldset>
+            <legend title="Basic information">Basic information</legend>
+
+            First Name: <input type="text" placeholder="John Deo">
+
+            Last Name: <input type="text" tabindex="1"><br><br>
+
+            Designation: <input type="text" name="designation" id="designation" maxlength="10"><br><br>
+
+            Address 1: <input type="text" name="address1" id="address1" size="50" ><br><br>
+
+            Email: <input type="text" name="email" id="email"><br><br>
+
+            Address 2: <input type="text" name="address2" id="address2"><br><br>
+
+            Phone Number: <input type="text" name="phone" id="phone"><br><br>
+
+            City: <input type="text" name="city" id="city"><br><br>
+
+            Gender: <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<br><br>
+
+            State: <select name="state" id="state" multiple>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Rajsthan">Rajsthan</option>
+                <option value="Assam">Assam</option>
+                <option value="Madhyaprades">Madhyaprades</option>
+            </select><br><br>
+
+            Relationship Status: <select name="relationship" id="relationship">
+                <option value="Single">s-Single</option>
+                <option value="Married">m-Married</option>
+                <option value="Divorsed">d-Divorsed</option>
+                <option value="Divorsed">d-Divorsed</option>
+            </select><br><br>
+
+            Date: <input type="date" name="date" id=""><br><br>
+        </fieldset>
+
+        <div style="margin-top: 30px;">
+            <fieldset>
+                <legend>Educational Details</legend>
+                <!-- SSC Result -->
+                <div style="margin-top: 20px;">
+                    <b style="font-size: large;">SSC Result</b><br><br>
+
+                    Board Name: <input type="text" name="sscboard" id="board">
+
+                    Passing Year: <input type="text" name="sscboard" id="board">
+
+                    Percentages: <input type="text" name="sscpr" id="pr">
+
+                </div>
+
+                <!-- HSC Result -->
+                <div style="margin-top: 20px;">
+
+                    <b style="font-size: large;">HSC Result</b><br><br>
+
+                    Board Name: <input type="text" name="hscboard" id="board">
+
+                    Passing Year: <input type="text" name="hscboard" id="board">
+
+                    Percentages: <input type="text" name="hscpr" id="pr">
+
+                </div>
+
+                <!-- Bachelor Result -->
+                <div style="margin-top: 20px;">
+
+                    <b style="font-size: large;">Bachelor Result</b><br><br>
+
+                    Course Name: <input type="text" name="bCourse" id="board">
+
+                    University name: <input type="text" name="bUniversityName" id="">
+
+                    Passing Year: <input type="text" name="bPassingYear" id="board">
+
+                    Percentages: <input type="text" name="bPr" id="pr">
+
+                </div>
+
+                <!-- Master Result -->
+                <div style="margin-top: 20px;">
+
+                    <b style="font-size: large;">Master Result</b><br><br>
+
+                    Course Name: <input type="text" name="mCourse" id="board">
+
+                    University name: <input type="text" name="mUniversityName" id="">
+
+                    Passing Year: <input type="text" name="mPassingYear" id="board">
+
+                    Percentages: <input type="text" name="mPr" id="pr">
+
+                </div>
+            </fieldset>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <fieldset>
+                <legend>Work Experience</legend>
+
+                1st Company Name: <input type="text" name="companyName" id="companyName" style="width: 400px;">
+
+                Designation: <input type="text" name="designation" id="designation" style="width: 350px;">
+
+                From: <input type="text" name="fromDate" id="fromDate" style="width: 205px;">
+
+                To: <input type="text" name="toDate" id="toDate" style="width: 205px;">
+                <br><br>
+                2nd Company Name: <input type="text" name="companyName" id="companyName" style="width: 400px;">
+
+                Designation: <input type="text" name="designation" id="designation" style="width: 350px;">
+
+                From: <input type="text" name="fromDate" id="fromDate" style="width: 205px;">
+
+                To: <input type="text" name="toDate" id="toDate" style="width: 205px;">
+                <br><br>
+                3rd Company Name: <input type="text" name="companyName" id="companyName" style="width: 400px;">
+
+                Designation: <input type="text" name="designation" id="designation" style="width: 350px;">
+
+                From: <input type="text" name="fromDate" id="fromDate" style="width: 205px;">
+
+                To: <input type="text" name="toDate" id="toDate" style="width: 205px;">
+
+            </fieldset>
+        </div>
+
+
+        <div style="margin-top: 30px;">
+            <!-- Language known -->
+            <fieldset style="padding: 20px;">
+                <legend>Language known</legend>
+
+                <input type="checkbox" name="lang_hindi[]" id="lang_hindi" style="padding:0px; width: 30px;">Hindi
+
+                <input type="checkbox" name="lang_hindi_option[]" id="lang_hindi_read" style="width: 30px;">Read
+
+                <input type="checkbox" name="lang_hindi_option[]" id="lang_hindi_write" style="width: 30px;">Write
+
+                <input type="checkbox" name="lang_hindi_option[]" id="lang_hindi_speak"
+                    style="width: 30px;">Speak<br><br>
+
+                <input type="checkbox" name="lang_guj[]" id="lang_guj" style="padding:0px; width: 30px;">Gujarati
+
+                <input type="checkbox" name="lang_guj_option[]" id="lang_guj_read" style="width: 30px;">Read
+
+                <input type="checkbox" name="lang_guj_option[]" id="lang_guj_write" style="width: 30px;">Write
+
+                <input type="checkbox" name="lang_guj_option[]" id="lang_guj_speak" style="width: 30px;">Speak<br><br>
+
+                <input type="checkbox" name="lang_eng[]" id="lang_eng" style="padding:0px; width: 30px;">English
+
+                <input type="checkbox" name="lang_eng_option[]" id="lang_eng_read" style="width: 30px;">Read
+
+                <input type="checkbox" name="lang_eng_option[]" id="lang_eng_write" style="width: 30px;">Write
+
+                <input type="checkbox" name="lang_eng_option[]" id="lang_eng_speak" style="width: 30px;">Speak
+
+            </fieldset>
+
+            <!-- Technology known -->
+            <fieldset>
+                <legend>Technologies you know</legend>
+
+
+                <input type="checkbox" name="tech[]" id="tech_php" style="padding:0px; width: 30px;">PHP
+
+                <input type="radio" name="tech_php_status" id="tech_php_beginer" style="width: 30px;">Beginer
+
+                <input type="radio" name="tech_php_status" id="tech_php_mediator" style="width: 30px;">Mediator
+
+                <input type="radio" name="tech_php_status" id="tech_php_expert" style="width: 30px;">Expert<br><br>
+
+                <input type="checkbox" name="tech[]" id="tech_laravel" style="padding:0px; width: 30px;">Laravel
+
+                <input type="radio" name="tech_laravel_status" id="tech_laravel_beginer" style="width: 30px;">Beginer
+
+                <input type="radio" name="tech_laravel_status" id="tech_laravel_mediator" style="width: 30px;">Mediator
+
+                <input type="radio" name="tech_laravel_status" id="tech_laravel_expert"
+                    style="width: 30px;">Expert<br><br>
+
+                <input type="checkbox" name="tech[]" id="tech_mysql" style="padding:0px; width: 30px;">Mysql
+
+                <input type="radio" name="tech_mysql_status" id="tech_mysql_beginer" style="width: 30px;">Beginer
+
+                <input type="radio" name="tech_mysql_status" id="tech_mysql_mediator" style="width: 30px;">Mediator
+
+                <input type="radio" name="tech_mysql_status" id="tech_mysql_expert" style="width: 30px;">Expert<br><br>
+
+                <input type="checkbox" name="tech[]" id="tech_oracle" style="padding:0px; width: 30px;">Oracle
+
+                <input type="radio" name="tech_oracle_status" id="tech_oracle_beginer" style="width: 30px;">Beginer
+
+                <input type="radio" name="tech_oracle_status" id="tech_oracle_mediator" style="width: 30px;">Mediator
+
+                <input type="radio" name="tech_oracle_status" id="tech_oracle_expert" style="width: 30px;">Expert
+
+            </fieldset>
+
+        </div>
+
+        <div style="margin-top: 30px;">
+            <fieldset>
+                <legend>Reference Contact</legend>
+
+                1st Ref Name: <input type="text" name="ref_name" id="ref_name" style=" width: 420px;">
+
+                Contact Number: <input type="text" name="ref_contact" id="ref_contact" style="width: 300px;">
+
+                Relation: <input type="text" name="ref_relation" id="ref_relation" style="width: 250px;"><br><br>
+
+                2nd Ref Name: <input type="text" name="ref_name" id="ref_name" style=" width: 420px;">
+
+                Contact Number: <input type="text" name="ref_contact" id="ref_contact" style="width: 300px;">
+
+                Relation: <input type="text" name="ref_relation" id="ref_relation" style="width: 250px;"><br><br>
+
+                3rd Ref Name: <input type="text" name="ref_name" id="ref_name" style=" width: 420px;">
+
+                Contact Number: <input type="text" name="ref_contact" id="ref_contact" style="width: 300px;">
+
+                Relation: <input type="text" name="ref_relation" id="ref_relation" style="width: 250px;">
+
+            </fieldset>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <fieldset>
+                <legend>Preference</legend>
+
+                Notice period: <input type="text" name="notice_period" id="notice_period" style="width: 400px">
+
+                Current CTC: <input type="text" name="current_ctc" id="current_ctc" style="width: 380px">
+
+                Expected CTC: <input type="text" name="expected_ctc" id="expected_ctc" style="width: 380px"><br><br>
+
+                Prefered location: <select name="pref_location" id="pref_location" style="width: 400px;">
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Rajkot">Rajkot</option>
+                    <option value="Surendranagar">Surendranagar</option>
+                    <option value="Surat">Surat</option>
+                </select>
+
+                Department: <select name="pref_department" id="pref_department" style="width: 400px;">
+                    <option value="Marketing">Marketing</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Testing">Testing</option>
+                    <option value="HR">HR</option>
+                </select>
+
+            </fieldset>
+
+        </div>
+    </form>
+
+    <div style="display: flex; justify-content: center; align-items: center; width:100vw">
+        <input type="submit" value="submit"
+            style="width:800px;background-color:green;color: white; margin-top: 20px; font-size: 25px">
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.center{
+    text-align: center;
+}
+form { 
+    margin: 0 auto; 
+    width: 1200px;
+}
+input, select{
+    padding: 7px;
+    width: 600px;
+}

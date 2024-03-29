@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv').config();
 const bodyParser = require('body-parser');
 const con = require('./config/dbConnection');
@@ -20,6 +21,7 @@ app.set('views', path.join(__dirname+'/views'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/public'));
+app.use(cookieParser());
 
 app.use(cors());
 app.use('/', todo);

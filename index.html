@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Merge Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
 </head>
-<body>
-    <a href="../todo/FRONTEND/index.html">todo</a><br>
-    <a id="dynamic_table">dynamic table</a><br>
-    <a id="delimiter_search">Delimiter search</a><br>
-    <a id="combo_practice">Combo Practice</a><br>
-    <a id="filter_search">Filter Searching</a><br>
-    <a href="../public/html/post.html">JSON Placeholder</a><br>
-    <a href="../timezone Calc/timezone.html">Timezone Calc</a><br>
-    <a href="../public/html/dommanipulation.html">DOM Manipulation</a><br>
-    <a id="student_management">Student Management</a><br>
 
-    <p>HTML Projects</p>
-    <a href="../views/HTML Projects/AwanHoster webpage/awanhoster.html">Awan Host Webpage</a><br>
-    <a href="../views/HTML Projects/ehya webpage/ehya.html">ehya Webpage</a><br>
-    <a href="../views/HTML Projects/HireX Webpage/hireX.html">Hirex Webpage</a><br>
-    <a href="../views/HTML Projects/HTML Structure Practice/">HTML Structure Practice</a><br>
-    <a href="../views/HTML Projects/Html tags/index.html">HTML Tags Practice</a><br>
-    <a href="../views/HTML Projects/Job Application Form/job_application_form.html">Job App Form</a><br>
-
-    <p>Javacsript Projects</p>
-    <a href="../Javascript projects/dom Manipulation/index.html">Dom Manipulations</a><br>
-    <a href="../Javascript projects/Js Events/js events.html">JS Events</a><br>
-    <a href="../Javascript projects/koo koo cube/index.html">Koo koo cube</a><br>
-    <a href="../Javascript projects/sorting algorithm/sort.html">sorting algorithum</a><br>
-    <a href="../Javascript projects/tic tac tio/game.html">tic tac tio</a><br>
+<body class="bg-black m-5">
+    <p class="h1 text-white text-center">Dashboard</p>
+    <div class="row">
+        <p class="h2 text-white my-5">Node JS Projects</p>
+        <div id="nodejs">
+        </div>
+        <p class="h2 text-white text-center my-5">HTML Projects</p>
+        <div id="html">
+        </div>
+        <p class="h2 text-white text-center my-5">Javascript Projects</p>
+        <div id="javascript">
+        </div>
+    </div>
     <script>
-        document.getElementById('dynamic_table').addEventListener('click', ()=>{
-            window.location.href = "http://localhost:8000/table";
+        const projectsRoutes = ["../todo/FRONTEND/index.html", "../public/html/post.html",
+            "../timezone Calc/timezone.html", "http://localhost:8000/table", "http://localhost:8000/combo",
+            "http://localhost:8000/filter", "http://localhost:8000/", "http://localhost:8000/showstudents",
+            "../HTML Projects/AwanHoster webpage/awanhoster.html",
+            "../HTML Projects/ehya webpage/ehya.html", "../HTML Projects/HireX Webpage/hireX.html",
+            "../HTML Projects/HTML Structure Practice/structure3.html", "../HTML Projects/Html tags/index.html",
+            "../HTML Projects/Job Application Form/job_application_form.html", "../Javascript projects/dom Manipulation/index.html",
+            "../Javascript projects/Js Events/js events.html", "../Javascript projects/koo koo cube/index.html",
+            "../Javascript projects/sorting algorithm/sort.html",
+            "../Javascript projects/tic tac tio/game.html"];
+
+        const projectNames = ["1. Todo Notes Web App", "2. Json Placeholder API",
+            "3. Timezon Calculator", "4. Dyanmic Grid Generator", "5. Delimiter Search on Grid",
+            "6. Auto Generate Combos (select, radio, checkbox)", "7. Filter Searching on table",
+            "8. Student Management", "9. Awanhost static Webpage", "10. ehya static Webpage",
+            "11. Hirex static Webpage", "12. HTML Structure Practice", "13. HTML Tags Practice", "14. Job App Form"
+            , "15. Dom Manipulations", "16. javascript Events", "17. Koo koo cube Game", "18. Sorting Algorithms", "19. Tic Tac Tio Game"]
+
+        projectNames.forEach((project, i) => {
+            document.getElementById((i < 8) ? "nodejs" : (i >= 8 && i <= 14) ? "html" : "javascript").insertAdjacentHTML("beforebegin", `<div class="col-6 mt-5"><div class="card bg-dark p-3">
+                        <div class="d-flex align-items-center">
+                            <h5 class="card-title text-white col-10 fs-4">${project}</h5>
+                            <input class="btn btn-success text-white mx-1 col-2" type="button" value="View Project" onclick='viewProjects(${i})'>
+                        </div>
+                        <p class="card-text my-2">
+                            <img class="card-img-top" src="./public/assets/${i + 1}.png" alt="">
+                        </p>
+                    </div></div>`);
         })
-        document.getElementById('combo_practice').addEventListener('click', ()=>{
-            window.location.href = "http://localhost:8000/combo";
-        })
-        document.getElementById('filter_search').addEventListener('click', ()=>{
-            window.location.href = "http://localhost:8000/filter";
-        })
-        document.getElementById('delimiter_search').addEventListener('click', ()=>{
-            window.location.href = "http://localhost:8000/";
-        })
-        document.getElementById('student_management').addEventListener('click', ()=>{
-            window.location.href = "http://localhost:8000/showstudents";
-        })
+
+        const viewProjects = (projectNo) => {
+            window.open(projectsRoutes[projectNo], '_blank');
+        }
     </script>
 </body>
+
 </html>

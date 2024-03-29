@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koo Koo cube</title>
+    <style>
+        td {
+            width: 50px;
+            height: 50px;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Koo Koo cube</h1>
+    <div>
+        <input type="submit" value="Start Game" onclick="generateTable(2, getRandomColor())"
+            style="background-color: green;color: white; padding: 4px; font-weight: bold" id="startBtn">
+    </div>
+    <div style="margin-top: 10px;">
+        <table id="table" border="1px solid black">
+
+        </table>
+    </div>
+    <div>
+        <p style="font-size: 30px">Score: </p>
+        <p id="score" style="font-weight: bold; font-size: 30px">0</p>
+    </div>
+</body>
+<script>
+    var num = 2;
+    function generateTable(num, color) {
+        let table = document.getElementById('table');
+        let rndNumber = Math.floor(Math.random() * (num * num - 1));
+        let count = 0;
+        for (let row = 0; row < num; row++) {
+            let tr = document.createElement('tr');
+            for (let col = 0; col < num; col++) {
+                let td = document.createElement('td');
+                if (rndNumber == count) {
+                    td.style.backgroundColor = color;
+                    td.style.opacity = 0.5;
+                    if(parseInt(num) < 12){
+                        this.num = parseInt(num) + 1;
+                    }else{
+                        this.num = parseInt(num);
+                    }
+                    td.setAttribute("onclick", "rightClicked(num)");
+                    tr.appendChild(td);
+                } else {
+                    td.style.backgroundColor = color;
+                    tr.appendChild(td);
+                }
+                count++;
+            }
+            table.appendChild(tr);
+        }
+    }
+
+    function rightClicked(num){
+        document.getElementById('score').innerText =  parseInt(document.getElementById('score').innerText) + 1;
+        let table = document.getElementById('table').innerHTML = "";
+        generateTable(num, getRandomColor());
+        
+    }
+    function getRandomColor() {
+        let latters = '0123456789ABCDEF';
+        var color = '#';
+
+        for (let i = 0; i < 6; i++) {
+            color += latters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+
+</html>

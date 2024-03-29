@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./sorting.js"></script>
+</head>
+<body>
+    Enter values (comma saprated): <input type="text" name="sortArray" id="sortArray">
+    <br>
+    <br>
+    <input type="submit" value="Bubble sort" id="bubble" onclick="sorting(this.id)">
+    <input type="submit" value="Selection sort" id="selection" onclick="sorting(this.id)">
+    <input type="submit" value="Merge sort" id="merge" onclick="sorting(this.id)">
+    <br>
+    <br>
+    Sort values: <p id="result"></p>
+</body>
+<script>
+    function sorting(id){
+        const arr = document.getElementById('sortArray').value.split(",").map(Number);
+        if(id == "bubble"){
+           document.getElementById('result').innerHTML = bubbleSort(arr);
+        }else if(id == "selection"){
+            document.getElementById('result').innerHTML = selectionSort(arr);
+        }else if(id == 'merge'){
+            document.getElementById('result').innerHTML = mergeSort(arr, parseInt(0), parseInt(arr.length));
+            // document.getElementById('result').innerHTML = mergeSort(arr);
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        td{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Tic Tac Toe</h1>
+    <p style="display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 40px" id="timer"></p>
+    <div style="display: flex; align-items: center; justify-content: center" id="outertable">
+       
+        <table id="table" border="1px solid black" style="width: 400px; height: 400px; text-align: center; font-size: 50px;">
+            <tr>
+                <td onclick="game(this.id)" id="box1"></td>
+                <td onclick="game(this.id)" id="box2"></td>
+                <td onclick="game(this.id)" id="box3"></td>
+            </tr>
+            <tr>
+                <td onclick="game(this.id)" id="box4"></td>
+                <td onclick="game(this.id)" id="box5"></td>
+                <td onclick="game(this.id)" id="box6"></td>
+            </tr>
+            <tr>
+                <td onclick="game(this.id)" id="box7"></td>
+                <td onclick="game(this.id)" id="box8"></td>
+                <td onclick="game(this.id)" id="box9"></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    <h2 id="result" style="text-align: center;"></h2>   
+    <div style="display: flex; justify-content: center;align-items: center;">
+    <input type="submit" value="Restart" onclick="restartMatch()" id="restartBtn" style="padding: 10px; background-color:blue;color: white; font-weight: bold" >
+</div>
+    <script src="./logic.js"></script>
+</body>
+
+</html>

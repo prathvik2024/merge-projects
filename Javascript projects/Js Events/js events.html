@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            color: white;
+            background-color: cadetblue;
+            font-size: larger;
+        }
+
+        .dragbox {
+            width: 100px;
+            padding: 10px;
+            height: 35px;
+            border: 1px solid black;
+        }
+        tr{
+            height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="alert('Page is loaded!');" onresize="onResize(this)" onunload="alert('page is unload!')">
+    <h2 style="text-align: center;">Javascript Events</h2>
+    <table border="1px" style="width: 100%; height: 100%;">
+        <tr>
+            <td>On blur: <input type="text" name="" id="" onblur="alert('on blur event triggerd');"></td>
+            <td>
+                select city: <select name="city" id="city"
+                    onchange="document.getElementById('cityname').innerHTML = document.getElementById('city').value">
+                    <option value="Ahm">Ahm</option>
+                    <option value="Rajkot">Rajkot</option>
+                    <option value="Baroda">Baroda</option>
+                    <option value="Surat">Surat</option>
+                </select>
+                <p id="cityname"></p>
+            </td>
+            <td onclick="alert('onclick event occur!');">on click</td>
+            <td id="contextmenu">on context menu</td>
+            <td ondblclick="alert('ondblclick event occur!!');"> on dbl click</td>
+            <td>
+                <div class="dragbox">
+                    <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">Hello! </p>
+                </div>
+                <p id="demo"></p>
+
+                <div class="dragbox" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="./me.jpg" alt="image not found!" onerror="alert('Image could not be display');"></td>
+            <!-- onfocusin is same as onfocus -->
+            <td style="padding: 4px;">onfocus<input type="text" name="" id="" onfocus="this.style.background = 'red';"></td>
+            <td style="padding: 4px;">onfocusout<input type="text" name="" id="" onfocusout="onFocusOut(this)"></td>
+            <td >oninput<input type="text" name="" oninput="onInput(this)"> <p id="oninput"></p></td>
+            <td>oninvalid<input type="text" oninvalid="alert('plz fill the form!');" required><br><input type="submit" value="submit"></td>
+            <td>onkeydown<input type="text" onkeydown="alert('you are pressed a down key!');"></td>
+        </tr>
+        <tr>
+            <td>onkeypress<input type="text" name="" id="" onkeypress="alert('on key press event triggerd!');"></td>
+            <td>onkeyup<input type="text" name="" id="" onkeyup="alert('on key up event triggerd!!')"></td>
+            <td onmouseup="alert('on mouse up event triggerd!!')">onmouseup</td>
+            <td onmousedown="alert('on mouse down event triggerd!!')">onmousedown</td>
+            <td>onmouseleave, onmouseenter<img src="./android.png" alt="" onmouseenter="onMouseEnter(this)" onmouseleave="onMouseLeave(this)"></td>
+            <td onmousewheel="alert('you are pressed mouse wheel!')">mousewheel</td>
+        </tr>
+        <tr>
+            <!-- pointerup, pointerdown is same -->
+            <td>pointermove, PointerOut<p id="pointermove" onpointermove="onPointerMove(this)" onpointerout="onPointerOut(this)">Hello!</p></td>
+            <td>resize<p id="onresizetext"></p></td>
+            <td >onsearch<input type="search" name="" id="" onsearch="onSearch(this)"> <p id="searchData"></p></td>
+            <td>onselect<input type="text" name="" id="" onselect="alert('select event is occured!');"></td>
+            <td><form action="" onsubmit="alert('form submit successfully!');"><input type="submit" value="submit"></form></td>
+            <td> <div class="dragbox" id="wheelex" ><p>Hello!</p></div></td>
+        </tr>
+    </table>
+    <script>
+        const contextmenu = document.getElementById('contextmenu').addEventListener("contextmenu", (e) => { e.defaultPrevented() });
+        const wheelex = document.getElementById('wheelex').addEventListener("wheel", wheelEvent);
+
+
+        function dragStart(event) {
+            dragtarget
+            event.dataTransfer.setData("Text", event.target.id);
+        }
+        function dragging(event) {
+            document.getElementById("demo").innerHTML = "The p element is dragged";
+        }
+
+        function allowdrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const data = event.dataTransfer.getData("Text");
+            event.target.appendChild(document.getElementById(data));
+            document.getElementById("demo").innerHTML = "The p element dropped";
+        }
+        function onFocusOut(x){
+            x.value = x.value.toUpperCase();
+        }
+        function onInput(x){
+            document.getElementById('oninput').innerHTML = x.value;
+        }
+        function onMouseEnter(x){
+            x.style.height = "64px";
+            x.style.width = "64px";
+        }
+        function onMouseLeave(x){
+            x.style.height = "32px";
+            x.style.width = "32px";
+        }
+        function onPointerMove(x){
+            x.style.color = 'blue';
+        }
+        function onPointerOut(x){
+            x.style.color = 'red';
+        }
+        function onResize(x){
+            let ww = window.outerWidth;
+            let wh = window.outerHeight;
+            let txt = "window width: " + ww + "window height: " +wh;
+            document.getElementById('onresizetext').innerHTML = txt;
+        }
+        function onSearch(x){
+            document.getElementById('searchData').innerHTML = x.value;
+        }
+
+        function wheelEvent(){
+            this.style.fontSize = '30px';
+        }
+
+    </script>
+</body>
+
+</html>

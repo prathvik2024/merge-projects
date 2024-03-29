@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Based Sorting Algorithm</title>
+</head>
+<body>
+     <script>
+        function bubbleSort(){
+            let arr = [12,45,23,123,87,43,90];
+            for (let i = 0; i < arr.length; i++){
+                for (let j = i + 1; j < arr.length; j++){
+                    if(arr[i] > arr[j]){
+                        let temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            } 
+            console.log(arr);          
+        }
+        bubbleSort();
+     </script>
+</body>
+</html>

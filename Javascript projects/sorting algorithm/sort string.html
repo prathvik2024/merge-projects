@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort a String</title>
+</head>
+<body>
+    <script>
+        function sortWord(){
+            let word = ["dfghdfh","gdrh","aqaa", "aqba", "aqaa", 'prathvik'];
+            for(let i = 0; i < word.length-1; i++){
+                for(let j = 0; j < word.length-1; j++ ){
+                    if(word[j] > word[j+1]){
+                        let temp = word[j];
+                        word[j] = word[j+1];
+                        word[j+1] = temp;
+                    }
+                }
+            }
+            console.log(word);
+        }
+        sortWord();
+    </script>
+</body>
+</html>

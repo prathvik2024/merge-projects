@@ -400,7 +400,7 @@ CREATE TABLE `todos` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `status` int DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -409,8 +409,39 @@ CREATE TABLE `todos` (
 
 LOCK TABLES `todos` WRITE;
 /*!40000 ALTER TABLE `todos` DISABLE KEYS */;
-INSERT INTO `todos` VALUES (1,'akjsrg','collagelsjbnf','2024-03-27 13:14:11',1),(2,'akjsrg','collagelsjbnf','2024-03-27 13:14:49',1),(3,'jigo','hee hee','2024-03-27 14:14:32',1),(4,'kavin','kbj','2024-03-27 15:10:05',1);
+INSERT INTO `todos` VALUES (1,'XFGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGakjsrg','collagelsjbnf','2024-03-27 13:14:11',1),(2,'akjsrg','collagelsjbnf','2024-03-27 13:14:49',1),(3,'jigo','hee hee','2024-03-27 14:14:32',1),(4,'kavin','kbjBNHUJMK ,L .','2024-03-27 15:10:05',1),(5,'dghmj','sjmsdfghgggggggggggggggggggggggggggggggg','2024-03-29 14:42:51',0),(6,'asdrgtASEdtykj','aewrg','2024-03-29 15:51:49',0),(7,'ft4','35rgtx3','2024-03-29 15:57:44',1),(8,'hale ','Hale he ?\n','2024-03-29 16:17:37',0);
 /*!40000 ALTER TABLE `todos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `fname` varchar(40) DEFAULT NULL,
+  `lname` varchar(40) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `pass` varchar(100) DEFAULT NULL,
+  `salting` varchar(5) DEFAULT NULL,
+  `activation_link` varchar(36) DEFAULT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `status` int DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'prathvik','sankaliya','prathvik@gmail.com','787cb94994db80e3c849e77cd90fd144','1kahb','3e6150810959af899f748f68263c3281','2024-04-01 11:45:37',1);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -450,4 +481,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-29 12:35:43
+-- Dump completed on 2024-04-01 12:11:42

@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv').config();
 const bodyParser = require('body-parser');
 const con = require('./config/dbConnection');
+const login = require('./Login Register Module/BACKEND/router/routes');
 const todo = require('./todo/BACKEND/router/routes');
 const dynamic_table = require('./Dynamic Table Component/router/routes');
 const delimiter_search = require('./delimiter search/router/routes');
@@ -24,6 +25,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
 
 app.use(cors());
+app.use('/', login);
 app.use('/', todo);
 app.use('/', delimiter_search);
 app.use('/', dynamic_table);

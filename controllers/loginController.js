@@ -1,4 +1,4 @@
-const loginModels = require('../model/loginModel');
+const loginModels = require('../models/loginModel');
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 

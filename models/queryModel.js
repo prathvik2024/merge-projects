@@ -1,4 +1,3 @@
-const { response } = require("express");
 const queryExecuter = async (con, query) => {
     var response = null;
     try {

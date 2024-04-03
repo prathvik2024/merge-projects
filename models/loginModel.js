@@ -1,4 +1,4 @@
-const con = require('../../../config/dbConnection');
+const con = require('../config/dbConnection');
 const queryExecuter = require('../helper/queryExecuter');
 const md5 = require('md5');
 var salting = (Math.random() + 1).toString(36).substring(2, 7);

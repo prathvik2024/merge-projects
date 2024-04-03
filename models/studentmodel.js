@@ -1,4 +1,4 @@
-const con = require('../../config/dbConnection');
+const con = require('../config/dbConnection');
 
 const showAllStudents = async (offset, orderby, column) => {
     var resultSet = null;

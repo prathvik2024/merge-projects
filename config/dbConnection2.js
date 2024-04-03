@@ -1,6 +1,5 @@
 const mysql = require('mysql');
-const path = require('path');
-const dotenv = require('dotenv').config({ path: path.join(__dirname, '../.env')});
+const dotenv = require('dotenv').config();
 
 module.exports.dbConnection = async () => {
     var response = null;

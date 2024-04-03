@@ -7,7 +7,6 @@ const queryRequestController = async (query, database, limit, offset, allCount) 
     } else if (!allCount && query.startsWith('select')) {
         query += ` limit ${offset}, ${limit};`;
     }
-    console.log(query);
     var result = null;
     await new Promise((resolve, reject) => {
         fetch("http://localhost:8000/queryExecute", {
@@ -53,7 +52,6 @@ const stringToQuery = (str) => {
         .replaceAll('}', ",email=")
         .replaceAll(':', ",city=");
 
-        console.log(str);
     // str = str.split(/[_^${}:]/).join('');
     str.split(',').forEach((elm) => {
         if (elm != '') {
@@ -78,7 +76,6 @@ const stringToQuery = (str) => {
         (i != Object.keys(obj).length - 1) ? where += ' and ' : where += ';';
     })
     // console.log(where);
-    console.log(where);
     return query += where;
     // }else{
     //     return {status: false};

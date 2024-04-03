@@ -6,7 +6,6 @@ module.exports = {
     registerUserController: async (fname, lname, email) => {
         try {
             var response = await loginModels.registerUserModel(fname, lname, email);
-            // console.log(response);
             if(response.status){
                 // var link = `http://127.0.0.1:5500/FRONTEND/html/user_activation.html?user_id:${response.result.insertId}&activation_id:${response.activation_link}`;
                 // const transporter = nodemailer.createTransport({
@@ -49,7 +48,6 @@ module.exports = {
     },
     checkUserActivationController : async (user_id, activation_id) =>{
         var resp = await loginModels.checkUserActivationModel(user_id, activation_id);
-        console.log(resp);
         if(resp.status && resp.result.status && user_id == resp.result.result[0].id){
             // return await loginModels.activeUserModel(user_id);
             return resp.result;

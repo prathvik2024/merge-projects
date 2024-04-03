@@ -6,7 +6,6 @@ const getRecords = async (query, database, limit, offset, allCount) => {
     }else if(!allCount && query.startsWith('select')){
         query += ` limit ${offset}, ${limit};`;
     }
-    console.log(query);
     var result;
     await new Promise((resolve, reject) => {
         fetch("http://localhost:8000/queryExecute", {
@@ -23,7 +22,6 @@ const getRecords = async (query, database, limit, offset, allCount) => {
     }).then((data) => {
         result = data;
     }).catch((err) => {
-        console.log(err);
         result = err;
     })
     // console.log(await result);

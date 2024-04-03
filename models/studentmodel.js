@@ -11,10 +11,8 @@ const showAllStudents = async (offset, orderby, column) => {
                 } else {
                     sql = `select * from student order by ${column} ${orderby} limit ${offset},${process.env.PAGE_LIMIT}`;
                 }
-                console.log('order by execute!');
             } else {
                 sql = `select * from student limit ${offset},${process.env.PAGE_LIMIT}`;
-                console.log('simple execute');
             }
             con.query(sql, (errors, result, field) => {
                 if (errors) reject(errors);
@@ -37,7 +35,6 @@ const getRecords = async () => {
             const sql = `select count(*) AS MAX_RECORDS from student`;
             con.query(sql, (errors, result, field) => {
                 if (errors) reject(errors);
-                console.log(result);
                 resolve(result[0].MAX_RECORDS);
             });
         }).then((result) => {
@@ -173,7 +170,7 @@ const getStudentResult = async (offset) => {
     } catch (error) {
         resultSet = error;
     }
-    return {terminalTheory: resultSet[0], terminalPractical: resultSet[1],prelimTheory: resultSet[2],prelimPractical: resultSet[3],finalTheory: resultSet[4],finalpractical: resultSet[5],studentData: resultSet[6]};
+    return { terminalTheory: resultSet[0], terminalPractical: resultSet[1], prelimTheory: resultSet[2], prelimPractical: resultSet[3], finalTheory: resultSet[4], finalpractical: resultSet[5], studentData: resultSet[6] };
 }
 const getStudentInfo = async (stud_id) => {
     var studentRecord = null;
@@ -212,7 +209,7 @@ const getStudentInfo = async (stud_id) => {
     } catch (error) {
         attendance = error;
     }
-    return {studentRecord, attendance};
+    return { studentRecord, attendance };
 }
 
-module.exports = { showAllStudents, getRecords, getStudentAttendance, getAttendanceRecords, getStudentResult,getStudentInfo};
+module.exports = { showAllStudents, getRecords, getStudentAttendance, getAttendanceRecords, getStudentResult, getStudentInfo };
